@@ -36,15 +36,14 @@ export default class Room {
     this.scene.add(this.actualRoom);
 
     this.lampLight = new THREE.PointLight(0x15788c, 0.5);
-    this.lampLight.position.set(
-      -0.48892098665237427,
-      0.3991079032421112,
-      -0.6269965767860413
-    );
+    this.lampLight.position.set(-0.48892098665237427, 0.5, -0.6269965767860413);
     this.actualRoom.add(this.lampLight);
     this.lampLight.castShadow = true;
     this.lampLight.shadow.mapSize.set(2048, 2048);
     this.lampLight.shadow.normalBias = 0.05;
+
+    this.pointLightHelper = new THREE.PointLightHelper(this.lampLight, 0.1);
+    // this.scene.add(this.pointLightHelper);
   }
 
   onMouseMove() {
