@@ -2,6 +2,7 @@ import * as THREE from "three";
 import GSAP from "gsap";
 
 import Experience from "../Experience.js";
+import Time from "../Utils/Time.js";
 
 export default class Room {
   constructor() {
@@ -10,6 +11,7 @@ export default class Room {
     this.resources = this.experience.resources;
     this.room = this.resources.items.room;
     this.actualRoom = this.room.scene;
+    this.time = this.experience.time;
 
     this.lerp = {
       current: 0,
@@ -18,6 +20,7 @@ export default class Room {
     };
 
     this.setModel();
+    this.setAnimation();
     this.onMouseMove();
   }
 
@@ -30,6 +33,12 @@ export default class Room {
         child.children.forEach((groupChild) => {
           groupChild.castShadow = true;
           groupChild.receiveShadow = true;
+        });
+      }
+
+      if (child.name === "screen") {
+        child.material = new THREE.MeshBasicMaterial({
+          map: this.resources.items.screen,
         });
       }
     });
@@ -53,6 +62,11 @@ export default class Room {
       this.lerp.target = this.rotation * 0.1;
     });
   }
+  setAnimation() {
+    this.mixer = new THREE.AnimationMixer(this.actualRoom);
+    // this.ani = this.mixer.clipAction(this.room.animations[0]);
+    // this.ani.play();
+  }
 
   resize() {}
 
@@ -62,6 +76,8 @@ export default class Room {
       this.lerp.target,
       this.lerp.ease
     );
+
+    this.mixer.update(this.time.delta);
 
     this.actualRoom.rotation.y = this.lerp.current;
   }

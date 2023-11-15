@@ -14,6 +14,15 @@ h1, section, p, span, svg{
   transition: background-color 0.5s, color 0.5s;
 }
 
+a{
+  text-decoration: none;
+  color: var(--color-link);
+}
+
+a:hover{
+  color: var(--color-link-hover);
+}
+
 :root{
   --black: #46425e;
   --dark-blue:  #15788c;
@@ -26,6 +35,10 @@ h1, section, p, span, svg{
 
 .light-theme{
   --color-text: var(--black);
+
+  --color-link: var(--dark-pink);
+  --color-link-hover: var(--dark-blue);
+
   --color-background: var(--white);
   --color-light-pink: var(--light-pink);
   --color-dark-pink: var(--dark-pink);
@@ -34,6 +47,10 @@ h1, section, p, span, svg{
 }
 .dark-theme{
   --color-text: var(--white);
+
+  --color-link: var(--light-blue);
+  --color-link-hover: var(--light-pink);
+
   --color-background: var(--black);
   --color-light-pink: var(--white);
   --color-dark-pink: var(--white);
