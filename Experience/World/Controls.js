@@ -21,6 +21,16 @@ export default class Controls {
     this.circle3 = this.experience.world.floor.circle3;
     this.circle4 = this.experience.world.floor.circle4;
 
+    this.clock = this.experience.world.room.actualRoom.children.find(
+      (child) => child.name === "clock"
+    );
+    this.hourHand = this.experience.world.room.actualRoom.children.find(
+      (child) => child.name === "hour_hand"
+    );
+    this.minHand = this.experience.world.room.actualRoom.children.find(
+      (child) => child.name === "min_hand"
+    );
+
     this.setScrollTrigger();
     this.setSmoothScroll();
   }
@@ -228,7 +238,7 @@ export default class Controls {
               return 0;
             },
             z: () => {
-              return this.sizes.width * 0.0016;
+              return this.sizes.width * 0.0024;
             },
           },
           "same"
@@ -237,7 +247,7 @@ export default class Controls {
           this.camera.orthographicCamera,
           {
             zoom: () => {
-              return this.sizes.width * 0.002;
+              return this.sizes.width * 0.003;
             },
             onUpdate: () => {
               this.camera.orthographicCamera.updateProjectionMatrix();
@@ -258,11 +268,13 @@ export default class Controls {
 
     // All
     mm.add("(min-width: 0px)", () => {
-      console.log("all");
+      console.log("all platforms");
 
       this.camera.orthographicCamera.zoom = 1;
       this.camera.orthographicCamera.updateProjectionMatrix();
       this.camera.orthographicCamera.position.set(0, 1, 1);
+
+      // Section Border Animations
 
       this.sections = document.querySelectorAll(".section");
       this.sections.forEach((section) => {
@@ -367,6 +379,49 @@ export default class Controls {
         x: 3,
         y: 3,
         z: 3,
+      });
+
+      // Clock Animations
+
+      this.clockMoveTimeline = new GSAP.timeline({
+        scrollTrigger: {
+          trigger: ".page",
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 0.6,
+          invalidateOnRefresh: true,
+          onUpdate: (self) => {
+            let axis = 1;
+            if (self.getVelocity() > 0) {
+              axis = -1;
+            } else {
+              axis = 1;
+            }
+            this.hourHand.rotateOnAxis(
+              new THREE.Vector3(0, axis, 0).normalize(),
+              Math.PI / 1800
+            );
+            this.minHand.rotateOnAxis(
+              new THREE.Vector3(0, axis, 0).normalize(),
+              Math.PI / 150
+            );
+          },
+        },
+      });
+
+      // Outisde Platform Animation
+
+      this.outMoveTimeline = new GSAP.timeline({
+        scrollTrigger: {
+          trigger: ".fourth-section",
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 0.6,
+          invalidateOnRefresh: true,
+          onUpdate: () => {
+            this.experience.world.room.playAnimation();
+          },
+        },
       });
     });
   }

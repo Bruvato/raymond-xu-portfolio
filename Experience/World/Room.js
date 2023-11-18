@@ -64,8 +64,18 @@ export default class Room {
   }
   setAnimation() {
     this.mixer = new THREE.AnimationMixer(this.actualRoom);
-    // this.ani = this.mixer.clipAction(this.room.animations[0]);
+    // this.ani = this.mixer.clipAction(this.room.animations[1]);
     // this.ani.play();
+    this.clips = this.room.animations;
+  }
+
+  playAnimation() {
+    this.clips.forEach((clip) => {
+      this.animation = this.mixer.clipAction(clip);
+      this.animation.clampWhenFinished = true;
+      this.animation.setLoop(THREE.LoopOnce);
+      this.animation.play();
+    });
   }
 
   resize() {}
@@ -77,7 +87,7 @@ export default class Room {
       this.lerp.ease
     );
 
-    this.mixer.update(this.time.delta);
+    this.mixer.update(this.time.delta * 0.0009);
 
     this.actualRoom.rotation.y = this.lerp.current;
   }
