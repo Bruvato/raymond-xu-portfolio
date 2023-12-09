@@ -348,6 +348,33 @@ a:hover{
   font-size: 50px;
 }
 
+/* Buttons ------------------------------------------------------ */
+.button-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.button{
+  cursor: pointer;
+  position: relative;
+  width: 150px;
+  height: 28px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-light-pink);
+  border-radius: 999px;
+  margin: 0px 16px;
+  border: none;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+  color: var(--color-text);
+  font-size: 16px;
+
+}
+
 
 /* Media Queries */
 
