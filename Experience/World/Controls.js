@@ -38,7 +38,7 @@ export default class Controls {
   setupASScroll() {
     // https://github.com/ashthornton/asscroll
     const asscroll = new ASScroll({
-      // ease: 0.3,
+      ease: 0.3,
       disableRaf: true,
     });
 
@@ -238,7 +238,7 @@ export default class Controls {
               return 0;
             },
             z: () => {
-              return this.sizes.width * 0.0024;
+              return this.sizes.width * 0.0014;
             },
           },
           "same"
@@ -247,7 +247,7 @@ export default class Controls {
           this.camera.orthographicCamera,
           {
             zoom: () => {
-              return this.sizes.width * 0.003;
+              return this.sizes.width * 0.002;
             },
             onUpdate: () => {
               this.camera.orthographicCamera.updateProjectionMatrix();

@@ -7,6 +7,6 @@ export default [
   {
     name: "screen",
     type: "videoTexture",
-    path: "/textures/donut.mp4",
+    path: "/textures/project reel.mp4",
   },
 ];
