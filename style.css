@@ -1,32 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@400;500;700&display=swap");
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-html, body{
+html,
+body {
   font-family: "Montserrat", sans-serif;
   color: var(--black);
   scroll-behavior: smooth;
 }
 
-h1, section, p, span, svg{
+h1,
+section,
+p,
+span,
+svg {
   transition: background-color 0.5s, color 0.5s;
 }
 
-a{
+a {
   text-decoration: none;
   color: var(--color-link);
 }
 
-a:hover{
+a:hover {
   color: var(--color-link-hover);
 }
 
-:root{
+:root {
   --black: #46425e;
-  --dark-blue:  #15788c;
+  --dark-blue: #15788c;
   --light-blue: #00b9be;
   --white: #ffeecc;
   --light-pink: #ffb0a3;
@@ -34,10 +39,9 @@ a:hover{
 
   --black-transperant: #46425e80;
   --white-transperant: #ffeecc6b;
-
 }
 
-.light-theme{
+.light-theme {
   --color-text: var(--black);
 
   --color-link: var(--dark-pink);
@@ -50,9 +54,8 @@ a:hover{
   --color-dark-blue: var(--dark-blue);
 
   --color-project-background: var(--white-transperant);
-
 }
-.dark-theme{
+.dark-theme {
   --color-text: var(--white);
 
   --color-link: var(--light-blue);
@@ -65,24 +68,23 @@ a:hover{
   --color-dark-blue: var(--white);
 
   --color-project-background: var(--black-transperant);
-
 }
 
 /* Experience ------------------------------------------------------ */
 
-.experience{
+.experience {
   position: fixed;
   width: 100vw;
   height: 100vh;
 }
 
-.experience-canvas{
+.experience-canvas {
   width: 100%;
   height: 100%;
 }
 
 /* Preloader ------------------------------------------------------ */
-.arrow-svg-wrapper{
+.arrow-svg-wrapper {
   position: absolute;
   top: 90%;
   left: 50%;
@@ -92,31 +94,30 @@ a:hover{
 }
 
 @keyframes bounce {
-  0%{
-    transform: translateY(0)
+  0% {
+    transform: translateY(0);
   }
 
-  100%{
-    transform: translateY(8px)
+  100% {
+    transform: translateY(8px);
   }
 }
 
 /* Page Itself ------------------------------------------------------ */
 
-.page{
+.page {
   z-index: 99999;
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
 
-.page-wrapper{
+.page-wrapper {
   position: relative;
 }
 
-
 /* Nav Bar ------------------------------------------------------ */
-.header{
+.header {
   position: fixed;
   width: 100%;
   display: flex;
@@ -125,30 +126,28 @@ a:hover{
   padding: 30px 1%;
 
   z-index: 99999999999999;
-
 }
-.logo{
+.logo {
   cursor: pointer;
   margin-right: auto;
 }
-.nav-links{
+.nav-links {
   list-style: none;
 }
-.nav-links li{
+.nav-links li {
   display: inline-block;
   padding: 0px 20px;
 }
-.nav-links li a{
+.nav-links li a {
   font-size: 16px;
   color: var(--color-text);
-
 
   transition: all 0.3s ease 0s;
 }
 
 /* Toggle bar ------------------------------------------------------ */
 
-.toggle-bar{
+.toggle-bar {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -156,16 +155,16 @@ a:hover{
   margin-left: 25px;
 }
 
-.sun-wrapper, .moon-wrapper{
+.sun-wrapper,
+.moon-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   color: var(--color-text);
-
 }
 
-.toggle-button{
+.toggle-button {
   cursor: pointer;
   position: relative;
   width: 56px;
@@ -179,11 +178,9 @@ a:hover{
   margin: 0px 16px;
   border: none;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-
 }
 
-
-.toggle-circle{
+.toggle-circle {
   position: absolute;
   left: 6px;
   border-radius: 50%;
@@ -193,22 +190,22 @@ a:hover{
   transition: all 0.2s ease-in-out;
 }
 
-.toggle-button:hover .toggle-circle{
+.toggle-button:hover .toggle-circle {
   transform: scale(0.9);
 }
 
-.slide{
+.slide {
   left: 28px;
 }
 
 /*  Section Formatting ------------------------------------------------------ */
 
-.section-margin{
+.section-margin {
   height: 3000px;
   width: 100%;
 }
 
-.section{
+.section {
   width: 50%;
   padding: 1000px 4%;
   margin: 0;
@@ -216,7 +213,7 @@ a:hover{
   overflow: hidden;
 }
 
-.left{
+.left {
   margin-right: auto;
   border-top-right-radius: 700px 700px;
   border-bottom-right-radius: 0px 0px;
@@ -226,31 +223,29 @@ a:hover{
   margin-left: auto;
   border-top-left-radius: 700px 700px;
   border-bottom-left-radius: 0px 0px;
-
 }
 
 /*  Progress Bars ------------------------------------------------------ */
 
-.progress-wrapper{
+.progress-wrapper {
   height: 0;
   width: 12px;
   z-index: 9999;
 }
 
-.progress-bar-wrapper-left{
+.progress-bar-wrapper-left {
   position: absolute;
   top: 0;
   left: 0;
-
 }
 
-.progress-bar-wrapper-right{
+.progress-bar-wrapper-right {
   position: absolute;
   top: 0;
   right: 0;
 }
 
-.progress-bar{
+.progress-bar {
   height: 100vh;
   width: 100%;
   /* background-color: var(--color-dark-pink); */
@@ -259,20 +254,19 @@ a:hover{
 }
 /*  Sections ------------------------------------------------------ */
 
-
-.section-intro-wrapper{
+.section-intro-wrapper {
   position: relative;
   padding: 20%;
   border-bottom: 2px solid var(--color-dark-pink);
   padding-bottom: 400px;
 }
 
-.section-detail-wrapper{
+.section-detail-wrapper {
   position: relative;
-  padding: 20% 5%
+  padding: 20% 5%;
 }
 
-.section-heading{
+.section-heading {
   font-size: 18px;
   font-weight: 700;
   line-height: 1.8;
@@ -280,14 +274,14 @@ a:hover{
   color: var(--color-text);
 }
 
-.section-sub-heading{
+.section-sub-heading {
   margin-top: 0;
   font-size: 14px;
   font-weight: 500;
   color: var(--color-light-pink);
 }
 
-.section-text{
+.section-text {
   line-height: 2;
   margin-top: 18px;
   font-size: 16px;
@@ -295,12 +289,12 @@ a:hover{
 }
 /* Fancy Decoration Part of Section ------------------------------------------------------ */
 
-.section-title{
+.section-title {
   position: relative;
-  color: var(--color-light-pink)
+  color: var(--color-light-pink);
 }
 
-.section-title-text{
+.section-title-text {
   display: block;
   font-size: 40px;
   font-weight: 500;
@@ -313,7 +307,7 @@ a:hover{
 
 .styleOne,
 .styleTwo,
-.styleThree{
+.styleThree {
   position: absolute;
   display: block;
   width: 100%;
@@ -324,21 +318,21 @@ a:hover{
   transform: skewY(-25deg);
 }
 
-.styleOne{
+.styleOne {
   top: 0px;
 }
 
-.styleTwo{
+.styleTwo {
   top: 80px;
 }
 
-.styleThree{
+.styleThree {
   top: 80px;
   transform: skewY(25deg);
   background-color: var(--color-dark-pink);
 }
 
-.section-number{
+.section-number {
   position: absolute;
   bottom: 15px;
   right: 0;
@@ -348,12 +342,12 @@ a:hover{
 
 /* Hero Section ------------------------------------------------------ */
 
-.hero{
+.hero {
   width: 100vw;
   height: 100vh;
 }
 
-.hero-wrapper{
+.hero-wrapper {
   position: relative;
   height: 100%;
   width: calc(100% - 160px);
@@ -361,31 +355,31 @@ a:hover{
   max-width: 1100px;
 }
 
-.hero-main{
+.hero-main {
   position: absolute;
   bottom: 168px;
   left: 0;
   color: var(--color-text);
 }
 
-.hero-second{
+.hero-second {
   position: absolute;
   top: calc(50% - 120px);
   right: 0;
   color: var(--color-text);
 }
 
-.hero-main-title{
+.hero-main-title {
   font-size: 64px;
   color: var(--color-text);
 }
 
-.hero-main-description{
+.hero-main-description {
   font-size: 18px;
   color: var(--color-text);
 }
 
-.hero-second-subheading{
+.hero-second-subheading {
   font-size: 32px;
   text-transform: uppercase;
   color: var(--color-text);
@@ -393,78 +387,71 @@ a:hover{
 
 /* Projects ------------------------------------------------------ */
 
-.project-page-wrapper{
+.project-page-wrapper {
   background-color: var(--color-background);
 }
-.project-main{
+.project-main {
   height: 100vh;
   display: grid;
   place-items: center;
   background-color: var(--color-project-background);
-
-
-
 }
-.project-section{
+.project-section {
   padding: 30px 10%;
-
-
 }
-.container{
+.container {
   display: grid;
   grid-template-rows: 300px;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 15px;
 }
-.item{
+.item {
   padding: 5%;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
-.item img{
+.item img {
   max-width: 100%;
   max-height: 75%;
   object-fit: cover;
 }
-.item-sub-heading{
+.item-sub-heading {
   font-size: 16px;
   font-weight: 700;
   color: var(--color-light-pink);
 }
-.item-heading{
+.item-heading {
   font-size: 18px;
   font-weight: 700;
 }
-.item-text{
+.item-text {
   font-size: 16px;
   color: var(--color-text);
 }
 
 /* Social Icons ------------------------------------------------------ */
 
-.social-wrapper{
+.social-wrapper {
   margin-top: 30px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-
 }
-.social-icon{
+.social-icon {
   text-decoration: none;
   font-size: 50px;
 }
 
 /* Buttons ------------------------------------------------------ */
-.button-container{
+.button-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
-.button{
+.button {
   cursor: pointer;
   position: relative;
-  width: 200px;
-  height: 50px;
+  padding: 12px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -480,23 +467,16 @@ a:hover{
   font-weight: 700;
 
   transition: all 0.2s ease-in-out;
-
-
 }
 
-.button:hover{
-
+.button:hover {
   transform: scale(0.9);
-
 }
-
-
-
 
 /* Media Queries */
 
-@media (max-width: 968px){
-  .section{
+@media (max-width: 968px) {
+  .section {
     width: 100%;
   }
 }
