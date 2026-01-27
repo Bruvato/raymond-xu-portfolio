@@ -17,7 +17,9 @@ section,
 p,
 span,
 svg {
-  transition: background-color 0.5s, color 0.5s;
+  transition:
+    background-color 0.5s,
+    color 0.5s;
 }
 
 a {
@@ -278,7 +280,8 @@ a:hover {
   margin-top: 0;
   font-size: 14px;
   font-weight: 500;
-  color: var(--color-light-pink);
+  color: var(--color-text);
+  /* color: var(--color-light-pink); */
 }
 
 .section-text {
