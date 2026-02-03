@@ -1,10 +1,11 @@
-# Raymond Xu 3D Pesronal Portfolio Website
+# Raymond Xu 3D Personal Portfolio Website
 
 ![portfolioHero](https://github.com/user-attachments/assets/6923c833-651c-4e76-b4f3-8bc4745923e3)
 
 A modern, interactive portfolio website built with Three.js.
 
 Credit to original creator: https://bokoko33.me/  |    [bokoko33](https://x.com/bokoko33)   
+Tutorial by [Andrew Woan](https://www.youtube.com/@andrewwoan)
 
 ## Overview
 
